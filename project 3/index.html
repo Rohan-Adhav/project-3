@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniStore - Your Ultimate Shopping Destination</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url("https://source.unsplash.com/800x600/?blue");
+            font-family: 'Lemon', serif;
+            margin: 0;
+        }
+
+        .header {
+            height: 66px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 0 20px;
+        }
+
+        ul {
+            font-size: 20px;
+            text-transform: uppercase;
+            list-style: none;
+            display: flex;
+        }
+
+        li {
+            margin: 0 25px 0 25px;
+            color: white;
+        }
+
+        .store-name {
+            font-size: 35px;
+            color: rgb(243, 32, 32);
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        #home img {
+            width: 100%;
+            height: auto;
+        }
+
+        #services {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .service {
+            color: white;
+            height: 150px;
+            width: 30%;
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        .product-heading {
+            color: antiquewhite;
+            margin-left: 20px;
+            margin-top: 30px;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+
+        .product {
+            width: 30%;
+            margin: 20px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            position: relative;
+            text-align: center;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .tags {
+            color: white;
+            font-size: 18px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #offers img {
+            width: 100%;
+            height: auto;
+        }
+
+        #blog {
+            display: flex;
+            justify-content: space-around;
+            color: wheat;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .blog {
+            height: 200px;
+            width: 30%;
+            border-right: 2px solid white;
+            margin: 20px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        .author {
+            text-align: center;
+            margin-top: 20px;
+            color: white;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 30px 20px;
+            margin-top: 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin-right: 30px;
+        }
+
+        .footer-section h3 {
+            color: #ecf0f1;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #3498db;
+        }
+
+        .copyright {
+            background-color: #34495e;
+            padding: 15px;
+            text-align: center;
+            color: #ecf0f1;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .service {
+                width: 100%;
+            }
+
+            .products,
+            .blog {
+                width: 100%;
+            }
+
+            .product,
+            .blog {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <span class="store-name">MiniStore</span>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#mobiles">Mobiles</a></li>
+                <li><a href="#watches">Watches</a></li>
+                <li><a href="#offers">Offers</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#home"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSIzMnB4IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMycHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6c2tldGNoPSJodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2gvbnMiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48dGl0bGUvPjxkZXNjLz48ZGVmcy8+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSI+PGcgZmlsbD0iIzE1N0VGQiIgaWQ9Imljb24tMTExLXNlYXJjaCI+PHBhdGggZD0iTTE5LjQyNzExNjQsMjEuNDI3MTE2NCBDMTguMDM3MjQ5NSwyMi40MTc0ODAzIDE2LjMzNjY1MjIsMjMgMTQuNSwyMyBDOS44MDU1NzkzOSwyMyA2LDE5LjE5NDQyMDYgNiwxNC41IEM2LDkuODA1NTc5MzkgOS44MDU1NzkzOSw2IDE0LjUsNiBDMTkuMTk0NDIwNiw2IDIzLDkuODA1NTc5MzkgMjMsMTQuNSBDMjMsMTYuMzM2NjUyMiAyMi40MTc0ODAzLDE4LjAzNzI0OTUgMjEuNDI3MTE2NCwxOS40MjcxMTY0IEwyNy4wMTE5MTc2LDI1LjAxMTkxNzYgQzI3LjU2MjExODYsMjUuNTYyMTE4NiAyNy41NTc1MzEzLDI2LjQ0MjQ2ODcgMjcuMDExNzE4NSwyNi45ODgyODE1IEwyNi45ODgyODE1LDI3LjAxMTcxODUgQzI2LjQ0Mzg2NDgsMjcuNTU2MTM1MiAyNS41NTc2MjA0LDI3LjU1NzYyMDQgMjUuMDExOTE3NiwyNy4wMTE5MTc2IEwxOS40MjcxMTY0LDIxLjQyNzExNjQgTDE5LjQyNzExNjQsMjEuNDI3MTE2NCBaIE0xNC41LDIxIEMxOC4wODk4NTExLDIxIDIxLDE4LjA4OTg1MTEgMjEsMTQuNSBDMjEsMTAuOTEwMTQ4OSAxOC4wODk4NTExLDggMTQuNSw4IEMxMC45MTAxNDg5LDggOCwxMC45MTAxNDg5IDgsMTQuNSBDOCwxOC4wODk4NTExIDEwLjkxMDE0ODksMjEgMTQuNSwyMSBMMTQuNSwyMSBaIiBpZD0ic2VhcmNoIi8+PC9nPjwvZz48L3N2Zz4=" alt="search"></a></li>
+                <li><a href="#home"> &#128722;</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <img src="https://i.ytimg.com/vi/N9wMGi45mxs/maxresdefault.jpg" alt="ERROR">
+        </section>
+
+        <section id="services">
+            <div class="service">
+                <h3>FREE DELIVERY</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+            </div>
+            <div class="service">
+                <h3>QUALITY GUARANTEE</h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="service">
+                <h3>DAILY OFFERS</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="product-heading">MOBILE PRODUCTS</h2>
+            <div class="products" id="mobiles">
+                <div class="product">
+                    <img src="https://dakauf.eu/wp-content/uploads/2022/10/Apple-14_promax_gold-300x300.jpg" alt="mobile1">
+                    <span class="tags">IPHONE 10 - $980</span>
+                </div>
+                <div class="product">
+                    <img src="https://shop.brilyant.com/wp-content/uploads/2023/10/iPhone11Red-300x300-1.png" alt="mobile2">
+                    <span class="tags">IPHONE 11 - $990</span>
+                </div>
+                <div class="product" type="ADD TO CART">
+                    <img src="https://i0.wp.com/itportal.co.in/wp-content/uploads/2022/10/71fVoqRC0wL._SL1500_.jpg?resize=300%2C300&ssl=1/300" alt="mobile3">
+                    <span class="tags">IPHONE 12 - $1000</span>
+                </div>
+                <div class="product">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5ZRzTPfLRmBz9ScmnORB8hhtflxbUwcxWwg&usqp=CAU/300" alt="mobile4">
+                    <span class="tags">IPHONE 13 - $1500</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="product-heading">SMART WATCHES</h2>
+            <div class="products" id="watches">
+                <div class="product">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu4DdjQ3c8wk68rl6lX_mxsVim3IbwCeVaow&usqp=CAU" alt="watch1">
+                    <span class="tags">PINK WATCH - $80</span>
+                </div>
+                <div class="product">
+                    <img src="https://drtrust.in/cdn/shop/products/dr-trust-healthpal-2-smart-watch-1-7-hd-display-calling-feature-heart-rate-spo2-29292511100974_700x700.jpg?v=1682059995" alt="watch2">
+                    <span class="tags">HEAVY WATCH - $90</span>
+                </div>
+                <div class="product">
+                    <img src="https://www.jiomart.com/images/product/original/rv2irv2p2g/jokin-t800-ultra-biggest-display-smart-watch-with-bluetooth-calling-smart-watch-wireless-magnetic-charger-fitness-hd-display-smartwatch-grey-strap-free-size-product-images-orv2irv2p2g-p601758828-0-202305241825.jpg?im=Resize=(420,420)" alt="watch3">
+                    <span class="tags">SPOTTED WATCH - $60</span>
+                </div>
+                <div class="product">
+                    <img src="https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw34d84041/images/Titan/Catalog/1698KM02_1.jpg?sw=800&sh=800" alt="watch4">
+                    <span class="tags">BLACK WATCH - $150</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="offers">
+            <img src="https://s3b.cashify.in/gpro/uploads/2023/05/05154458/Mailer-Apple-Article.jpg" alt="offer-image">
+        </section>
+
+        <section id="blog">
+            <article class="blog">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, illum dignissimos...</p>
+                <h4 class="author">~MR. ROBIN UTTAPA~</h4>
+            </article>
+            <article class="blog">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia nesciunt repellendus...</p>
+                <h4 class="author">~MR. DEV SINHA~</h4>
+            </article>
+            <article class="blog">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum enim cum cumque...</p>
+                <h4 class="author">~MRS. EMMA CHAMRELAMA~</h4>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Discover our mission and values that drive us.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@example.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Your Company. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
